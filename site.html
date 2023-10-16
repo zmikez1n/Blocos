@@ -75,15 +75,15 @@
        <div class="t">
            <div>
                <input type="radio" value="1" name="op" id="1">
-               <label for="1"><img src="6.webp" alt="Tijolo de 6 furos"></label>
+               <label for="1"><img src="6 furos.webp" alt="Tijolo de 6 furos"></label>
            </div>
            <div>
                <input type="radio" value="2" name="op" id="2">
-               <label for="2"><img src="8.jpg" alt="Tijolo de 8 furos"></label>
+               <label for="2"><img src="8 furos.jpg" alt="Tijolo de 8 furos"></label>
            </div>
            <div>
                <input type="radio" value="3" name="op" id="3">
-               <label for="3"><img src="Concreto.png" alt="Bloco de concreto"></label>
+               <label for="3"><img src="Bloco Concreto.png" alt="Bloco de concreto"></label>
            </div>
        </div>
         <br>
@@ -100,21 +100,21 @@
             const comprimentoParede = parseFloat(document.getElementById("comprimento-parede").value);
             const alturaParede = parseFloat(document.getElementById("altura-parede").value);
 if (t6.checked){
-    const dimensoesBloco = { comprimento: 9, largura: 14, altura: 19 };
+    const dimensoesBloco = { comprimento: 24, largura: 9, altura: 14     };
     const volumeBloco = (dimensoesBloco.comprimento / 100) * (dimensoesBloco.largura / 100) * (dimensoesBloco.altura / 100);
             const areaParede = comprimentoParede * alturaParede;
             const quantidadeBlocos = Math.ceil(areaParede / volumeBloco);
             document.getElementById("resultado").textContent = `Você precisará de ${quantidadeBlocos} blocos para construir a parede.`;
 }
 if (t8.checked){
-    const dimensoesBloco = { comprimento: 10, largura: 15, altura: 20 };
+    const dimensoesBloco = { comprimento: 19, largura: 9, altura: 19 };
     const volumeBloco = (dimensoesBloco.comprimento / 100) * (dimensoesBloco.largura / 100) * (dimensoesBloco.altura / 100);
             const areaParede = comprimentoParede * alturaParede;
             const quantidadeBlocos = Math.ceil(areaParede / volumeBloco);
             document.getElementById("resultado").textContent = `Você precisará de ${quantidadeBlocos} blocos para construir a parede.`;
 }
 if (tC.checked){
-    const dimensoesBloco = { comprimento: 12, largura: 18, altura: 24 };
+    const dimensoesBloco = { comprimento: 39, largura: 19, altura: 19 };
     const volumeBloco = (dimensoesBloco.comprimento / 100) * (dimensoesBloco.largura / 100) * (dimensoesBloco.altura / 100);
             const areaParede = comprimentoParede * alturaParede;
             const quantidadeBlocos = Math.ceil(areaParede / volumeBloco);
