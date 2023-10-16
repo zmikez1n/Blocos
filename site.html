@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construção de Paredes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 36px;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            padding: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            margin-top: 5px;
+        }
+        button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+       img{
+        width: 150px;
+        height: 150px;
+       }
+       .t{
+        display: flex;
+       }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Construção de Paredes</h1>
+    </header>
+    <div class="container">
+        <form>
+            <label for="comprimento-parede">Comprimento da Parede (m):</label>
+            <input type="number" id="comprimento-parede" step="0.01" required>
+            <label for="altura-parede">Altura da Parede (m):</label>
+            <input type="number" id="altura-parede" step="0.01" required>
+            <label for="dimensoes-bloco">Dimensões do Bloco:</label>
+       <div class="t">
+           <div>
+               <input type="radio" value="1" name="op" id="1">
+               <label for="1"><img src="6.webp" alt="Tijolo de 6 furos"></label>
+           </div>
+           <div>
+               <input type="radio" value="2" name="op" id="2">
+               <label for="2"><img src="8.jpg" alt="Tijolo de 8 furos"></label>
+           </div>
+           <div>
+               <input type="radio" value="3" name="op" id="3">
+               <label for="3"><img src="Concreto.png" alt="Bloco de concreto"></label>
+           </div>
+       </div>
+        <br>
+        <button type="button" onclick="calcularBlocos()">Calcular</button>
+        </form>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function calcularBlocos() {
+            var t6 = document.getElementById("1")
+            var t8 = document.getElementById("2")
+            var tC = document.getElementById("3")
+            const comprimentoParede = parseFloat(document.getElementById("comprimento-parede").value);
+            const alturaParede = parseFloat(document.getElementById("altura-parede").value);
+if (t6.checked){
+    const dimensoesBloco = { comprimento: 9, largura: 14, altura: 19 };
+    const volumeBloco = (dimensoesBloco.comprimento / 100) * (dimensoesBloco.largura / 100) * (dimensoesBloco.altura / 100);
+            const areaParede = comprimentoParede * alturaParede;
+            const quantidadeBlocos = Math.ceil(areaParede / volumeBloco);
+            document.getElementById("resultado").textContent = `Você precisará de ${quantidadeBlocos} blocos para construir a parede.`;
+}
+if (t8.checked){
+    const dimensoesBloco = { comprimento: 10, largura: 15, altura: 20 };
+    const volumeBloco = (dimensoesBloco.comprimento / 100) * (dimensoesBloco.largura / 100) * (dimensoesBloco.altura / 100);
+            const areaParede = comprimentoParede * alturaParede;
+            const quantidadeBlocos = Math.ceil(areaParede / volumeBloco);
+            document.getElementById("resultado").textContent = `Você precisará de ${quantidadeBlocos} blocos para construir a parede.`;
+}
+if (tC.checked){
+    const dimensoesBloco = { comprimento: 12, largura: 18, altura: 24 };
+    const volumeBloco = (dimensoesBloco.comprimento / 100) * (dimensoesBloco.largura / 100) * (dimensoesBloco.altura / 100);
+            const areaParede = comprimentoParede * alturaParede;
+            const quantidadeBlocos = Math.ceil(areaParede / volumeBloco);
+            document.getElementById("resultado").textContent = `Você precisará de ${quantidadeBlocos} blocos para construir a parede.`;
+}
+            if (isNaN(comprimentoParede) || isNaN(alturaParede)) {
+                alert("Por favor, insira números válidos.");
+                return;
+            }
+        }
+    </script>
+</body>
+</html>
